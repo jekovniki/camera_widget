@@ -172,7 +172,8 @@ class CameraWidget extends ImageWidget {
       '#description' => t('Generated url'),
       '#maxlength' => 200000,
       '#attributes' => [
-        'id' => ['generate_url']
+        'id' => ['generate_url'],
+        'style' => ['pointer-events: none;'],
       ]
     ];
 
@@ -218,13 +219,6 @@ class CameraWidget extends ImageWidget {
     }
     
     return $elements;
-  }
-
-  public static function process($element, FormStateInterface $form_state, $form) {
-    
-    $elem_key = array_pop($element['#parents']);
-
-    return $element;
   }
 
 }

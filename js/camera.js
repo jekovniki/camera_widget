@@ -40,7 +40,6 @@
     canvas = document.getElementById('canvas');
     photo = document.getElementById('photo');
     startbutton = document.getElementById('startbutton');
-    generateUrl();
 
     navigator.mediaDevices.getUserMedia({video: true, audio: false})
     .then(function(stream) {
@@ -108,14 +107,6 @@
     } else {
       clearphoto();
     }
-  }
-
-  function generateUrl() {
-    setTimeout(() => {
-      const url = document.getElementById('photo').src;
-      const myUrl = document.getElementById('generate_url');
-      myUrl.value = url;
-    }, '1000');
   }
 
   // Set up our event listener to run the startup process
