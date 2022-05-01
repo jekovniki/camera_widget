@@ -2,7 +2,9 @@
 <p>This is a Drupal 9 widget camera widget module. It allows for users to capture image with their phone camera and after that to use it on their Drupal website.</p>
 <h2>How to use</h2>
 <ul>
-    <li>Open terminal and run: <code>https://github.com/jekovniki/camera_widget.git</code></li>
+    <li>Download the repository. You can do it one of these two ways:<br>
+        - Open terminal and run: <code>git clone https://github.com/jekovniki/camera_widget.git</code><br>
+        - Download the repository as a .zip file grom the green button <code>Code</code></li>
     <li>Move the downloaded folder under <code>/modules</code> folder of your website</li>
     <li>Open your Drupal website, go to <code>Extend</code> and install the <code>Camera</code> module</li>
     <li>Go to your <code>Content types</code> and add field of type <code>image</code></li>
