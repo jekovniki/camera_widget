@@ -1,0 +1,10 @@
+<div class="contentarea" data-drupal-selector="edit-field-something-container">
+    <div class="camera" data-drupal-selector="edit-field-something-container-camera">
+        <video id="video" width="320" height="240"></video>
+        <button id="startbutton" onclick="generateUrl()">Take picture</button>
+    </div>
+    <canvas id="canvas" width="320" height="240"></canvas>
+    <div class="output">
+        <img id="photo" src="{{ camera_src }}">
+    </div>
+</div>

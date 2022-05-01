@@ -1,0 +1,7 @@
+name: Camera
+type: module
+description: Camera widget module. Provides field widget for capturing images with phone.
+core_version_requirement: ^8 || ^9
+package: Field types
+dependencies:
+  - drupal:image

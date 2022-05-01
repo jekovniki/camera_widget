@@ -1,0 +1,8 @@
+camera_widget:
+  version: 1.x
+  css:
+    css/camera.css: {}
+  js:
+    js/camera.js: {}
+  dependencies:
+    - core/jquery
