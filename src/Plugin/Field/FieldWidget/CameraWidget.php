@@ -62,108 +62,6 @@ class CameraWidget extends ImageWidget {
     return $summary;
   }
 
-  // protected function formMultipleElements(FieldItemListInterface $items, array &$form, FormStateInterface $form_state) {
-  //   $cardinality = $this->fieldDefinition->getFieldStorageDefinition()->getCardinality();
-  //   switch ($cardinality) {
-  //     case FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED:
-  //       $max = count($items);
-  //       $is_multiple = TRUE;
-  //       break;
-
-  //     default:
-  //       $max = $cardinality - 1;
-  //       $is_multiple = ($cardinality > 1);
-  //       break;
-  //   }
-
-  //   $elements['container'] = [
-  //     '#type' => 'html_tag',
-  //     '#tag' => 'div',
-  //     '#attributes' => [
-  //       'class' => [
-  //         'contentarea'
-  //       ]
-  //     ],
-  //   ];
-
-  //   $elements['container']['h2'] = [
-  //     '#type' => 'html_tag',
-  //     '#tag' => 'h2',
-  //     '#value' => t('WebRTC: Still photo capture'),
-  //   ];
-
-  //   $elements['container']['camera'] = [
-  //     '#type' => 'html_tag',
-  //     '#tag' => 'div',
-  //     '#attributes' => [
-  //       'class' => [
-  //         'camera'
-  //       ]
-  //     ],
-  //   ];
-  //   $elements['container']['camera']['video'] = [
-  //     '#type' => 'html_tag',
-  //     '#tag' => 'video',
-  //     '#attributes' => [
-  //       'id' => [
-  //         'video'
-  //       ]
-  //     ],
-  //   ];
-  //   $elements['container']['camera']['button'] = [
-  //     '#type' => 'html_tag',
-  //     '#tag' => 'button',
-  //     '#attributes' => [
-  //       'id' => [
-  //         'startbutton'
-  //       ]
-  //     ],
-  //     '#value' => t('Take picture'),
-  //   ];
-
-  //   $elements['container']['canvas'] = [
-  //     '#type' => 'html_tag',
-  //     '#tag' => 'canvas',
-  //     '#attributes' => [
-  //       'id' => [
-  //         'canvas'
-  //       ]
-  //     ],
-  //   ];
-
-  //   $elements['container']['output'] = [
-  //     '#type' => 'html_tag',
-  //     '#tag' => 'div',
-  //     '#attributes' => [
-  //       'class' => [
-  //         'output'
-  //       ]
-  //     ],
-  //   ];
-  //   $elements['container']['output']['img'] = [
-  //     '#type' => 'html_tag',
-  //     '#tag' => 'img',
-  //     '#attributes' => [
-  //       'id' => [
-  //         'photo',
-  //       ],
-  //       'alt' => ['The screen capture will appear in this box.'],
-  //     ],
-  //   ];
-
-  //   $element = [];
-
-  //   foreach (range(0, $max) as $delta) {
-  //     $elements[$delta] = [
-  //       '#type' => 'container',
-  //       '#attributes' => ['class' => ['container', 'col-sm']],
-  //       '#weight' => $delta,
-  //     ] + $this->formSingleElement($items, $delta, $elements, $form, $form_state);
-  //   }
-
-  //   return $elements;
-  // }
-
   /**
    * {@inheritdoc}
    */
@@ -320,6 +218,13 @@ class CameraWidget extends ImageWidget {
     }
     
     return $elements;
+  }
+
+  public static function process($element, FormStateInterface $form_state, $form) {
+    
+    $elem_key = array_pop($element['#parents']);
+
+    return $element;
   }
 
 }
