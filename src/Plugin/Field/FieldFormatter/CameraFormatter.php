@@ -28,8 +28,10 @@ class CameraFormatter extends FormatterBase {
 
     foreach($items as $delta => $item) {
       $element[$delta] = [
-        '#markup' => '<img class="camera_widget" style="width:' . $item->width .'; height:'. $item->height .'" src=""/>
+        '#markup' => '<img class="camera_widget" src=""/>
         <code class="base64image cam">' . $item->value . '</code>
+        <code class="width cam">' .$item->width .'</code>
+        <code class="height cam">' .$item->height .'</code>
         '
       ];
     }

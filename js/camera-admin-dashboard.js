@@ -11,13 +11,15 @@ function generateUrl() {
 }
 
 function handleUsedImage() {
-    const defaultImage = document.getElementById('generate_url').value;
+    setTimeout(() => {
+        const defaultImage = document.getElementById('generate_url').value;
 
-    if(defaultImage === 'Nothing to show') {
-        // Do nothing
-    } else {
-        document.getElementById('photo').src = defaultImage;
-    }
+        if(defaultImage === 'Nothing to show') {
+            // Do nothing
+        } else {
+            document.getElementById('photo').src = defaultImage;
+        }
+    }, '500'); 
 }
 
 handleUsedImage();

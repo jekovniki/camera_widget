@@ -107,11 +107,12 @@ class CameraWidget extends WidgetBase {
       '#default_value' => $value,
       '#title' => t('Generated url'),
       '#description' => t('Generated url'),
-      '#size' => 100,
+      '#size' => 19,
       '#maxlength' => 200000,
       '#attributes' => [
-        'id' => ['generate_url']
-      ]
+        'id' => ['generate_url'],
+        'style' => ['z-index:0; pointer-events:none; position:relative;'],
+      ],
     ];
 
     $element['width'] = [
