@@ -20,16 +20,6 @@ use Drupal\Core\Field\FormatterBase;
 class CameraFormatter extends FormatterBase {
 
   /**
-    * {@inheritdoc}
-    */
-  public function settingsSummary() {
-    $summary = [];
-    $summary[] = $this->t('Display the random string');
-
-    return $summary;
-  }
-
-  /**
    * {@inheritdoc}
    */
   public function viewElements(FieldItemListInterface $items, $langcode) {
@@ -38,7 +28,7 @@ class CameraFormatter extends FormatterBase {
 
     foreach($items as $delta => $item) {
       $element[$delta] = [
-        '#markup' => '<img class="camera_widget" src=""/>
+        '#markup' => '<img class="camera_widget" style="width:' . $item->width .'; height:'. $item->height .'" src=""/>
         <code class="base64image cam">' . $item->value . '</code>
         '
       ];

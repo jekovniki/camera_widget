@@ -6,7 +6,18 @@ hide.style.position = "absolute";
 function generateUrl() {
     setTimeout(() => {
         const url = document.getElementById('photo').src;
-        const myUrl = document.getElementById('generate_url');
-        myUrl.value = url;
+        document.getElementById('generate_url').value = url;
     }, '500');
-  }
+}
+
+function handleUsedImage() {
+    const defaultImage = document.getElementById('generate_url').value;
+
+    if(defaultImage === 'Nothing to show') {
+        // Do nothing
+    } else {
+        document.getElementById('photo').src = defaultImage;
+    }
+}
+
+handleUsedImage();

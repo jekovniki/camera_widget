@@ -26,6 +26,14 @@ class CameraItem extends FieldItemBase {
                     'type' => 'text',
                     'size' => 'medium',
                 ],
+                'width' => [
+                    'type' => 'text',
+                    'size' => 'tiny',
+                ],
+                'height' => [
+                    'type' => 'text',
+                    'size' => 'tiny',
+                ]
             ],
         ];
     }
@@ -36,6 +44,10 @@ class CameraItem extends FieldItemBase {
     public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
         $properties['value'] = DataDefinition::create('string')
         ->setLabel(t('Camera widget'));
+        $properties['width'] = DataDefinition::create('string')
+        ->setLabel(t('Picture width'));
+        $properties['height'] = DataDefinition::create('string')
+        ->setLabel(t('Picture height'));
 
         return $properties;
     }

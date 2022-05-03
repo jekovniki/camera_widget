@@ -23,7 +23,9 @@ class CameraWidget extends WidgetBase {
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
     $value = $items[$delta]->value !== null ? $items[$delta]->value : 'Nothing to show';
-
+    $width = $items[$delta]->width !== null ? $items[$delta]->width : '100%';
+    $height = $items[$delta]->height !== null ? $items[$delta]->height : '100%';
+ 
     $element['#attached']['library'][] = 'camera_widget/camera_widget_admin';
 
     $element['container'] = [
@@ -105,10 +107,34 @@ class CameraWidget extends WidgetBase {
       '#default_value' => $value,
       '#title' => t('Generated url'),
       '#description' => t('Generated url'),
-      '#size' => 1000,
+      '#size' => 100,
       '#maxlength' => 200000,
       '#attributes' => [
         'id' => ['generate_url']
+      ]
+    ];
+
+    $element['width'] = [
+      '#type' => 'textfield',
+      '#default_value' => $width,
+      '#title' => t('Width'),
+      '#description' => t('Width of the photo when displayed on the page. Leave empty for 100% of the field. Add pt, px, % and etc. after the number.'),
+      '#size' => 10,
+      '#maxlength' => 10,
+      '#attributes' => [
+        'id' => ['camera_width']
+      ]
+    ];
+
+    $element['height'] = [
+      '#type' => 'textfield',
+      '#default_value' => $height,
+      '#title' => t('Height'),
+      '#description' => t('Height of the photo when displayed on the page. Leave empty for 100% of the field. Add pt, px, % and etc. after the number.'),
+      '#size' => 10,
+      '#maxlength' => 10,
+      '#attributes' => [
+        'id' => ['camera_height']
       ]
     ];
     
@@ -129,6 +155,12 @@ class CameraWidget extends WidgetBase {
     foreach ($values as $key => $value) {
       if (empty($value['value'])) {
         unset($values[$key]['value']);
+      }
+      if (empty($value['width'])) {
+        unset($values[$key]['width']);
+      }
+      if (empty($value['height'])) {
+        unset($values[$key]['height']);
       }
     }
 
