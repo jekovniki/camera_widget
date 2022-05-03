@@ -4,5 +4,6 @@ camera_widget:
     css/camera.css: {}
   js:
     js/camera.js: {}
+    js/camera-lp.js: {}
   dependencies:
     - core/jquery
