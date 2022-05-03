@@ -7,7 +7,7 @@
         - Download the repository as a .zip file grom the green button <code>Code</code></li>
     <li>Move the downloaded folder under <code>/modules</code> folder of your website</li>
     <li>Open your Drupal website, go to <code>Extend</code> and install the <code>Camera</code> module</li>
-    <li>Go to your <code>Content types</code> and add field of type <code>image</code></li>
+    <li>Go to your <code>Content types</code> and add field of type <code>Camera widget</code></li>
     <li>Go to <code>Manage form display</code> and for the added field from column <code>Widget</code> select <code>Camera</code><br> P.S. If necessary configure the field</li>
     <li>Go to <code>Manage display</code> and select <code>Camera widget</code></li>
     <li>Upload your content type and you will see the camera widget</li>
