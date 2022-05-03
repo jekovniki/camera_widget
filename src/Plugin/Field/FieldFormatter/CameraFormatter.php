@@ -34,10 +34,13 @@ class CameraFormatter extends FormatterBase {
    */
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $element  = [];
+    $element['#attached']['library'][] = 'camera_widget/camera_widget';
 
     foreach($items as $delta => $item) {
       $element[$delta] = [
-        '#markup' => '<img src="' . $item->value . '" />'
+        '#markup' => '<img class="camera_widget" src=""/>
+        <code class="base64image cam">' . $item->value . '</code>
+        '
       ];
     }
 

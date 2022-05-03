@@ -24,7 +24,7 @@ class CameraWidget extends WidgetBase {
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
     $value = $items[$delta]->value !== null ? $items[$delta]->value : 'Nothing to show';
 
-    $element['#attached']['library'][] = 'camera_widget/camera_widget';
+    $element['#attached']['library'][] = 'camera_widget/camera_widget_admin';
 
     $element['container'] = [
       '#type' => 'html_tag',

@@ -1,9 +1,16 @@
-camera_widget:
+camera_widget_admin:
   version: 1.x
   css:
     css/camera.css: {}
   js:
     js/camera.js: {}
-    js/camera-lp.js: {}
+    js/camera-admin-dashboard.js: {}
   dependencies:
     - core/jquery
+
+camera_widget:
+  version: 1.x
+  css:
+    css/camera-widget.css: {}
+  js:
+    js/camera-widget.js: {}
