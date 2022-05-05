@@ -108,7 +108,7 @@ class CameraWidget extends WidgetBase {
       '#title' => t('Generated url'),
       '#description' => t('Generated url'),
       '#size' => 19,
-      '#maxlength' => 200000,
+      '#maxlength' => 10000000,
       '#attributes' => [
         'id' => ['generate_url'],
         'style' => ['z-index:0; pointer-events:none; position:relative;'],
