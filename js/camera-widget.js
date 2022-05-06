@@ -1,10 +1,19 @@
+var count = 5;
+
 function cameraWidgetLoad() {
     const base64 = document.querySelector('.base64image.cam');
     const width = document.querySelector('.width.cam');
     const height = document.querySelector('.height.cam');
 
-
     if(!base64) {
+        setTimeout(() => {
+            count--;
+
+            if(0 < count) {
+                cameraWidgetLoad();
+            }
+        }, 500);
+
         console.log('Camera widget failed to get the url');
         return;
     }
