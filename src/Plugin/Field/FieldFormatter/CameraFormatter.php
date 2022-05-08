@@ -24,16 +24,17 @@ class CameraFormatter extends FormatterBase {
    */
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $element  = [];
-    $element['#attached']['library'][] = 'camera_widget/camera_widget';
 
     foreach($items as $delta => $item) {
       $element[$delta] = [
-        '#markup' => '<img class="camera_widget" src=""/>
-        <code class="base64image cam">' . $item->value . '</code>
-        <code class="width cam">' .$item->width .'</code>
-        <code class="height cam">' .$item->height .'</code>
-        '
-      ];
+        '#type' => 'html_tag',
+        '#tag' => 'img',
+        '#attributes' => [
+          'src' => $item->value,
+          'width' => $item->width,
+          'height' => $item->height,
+        ]
+        ];
     }
 
     return $element;
