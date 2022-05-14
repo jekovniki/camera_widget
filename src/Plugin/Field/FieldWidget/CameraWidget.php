@@ -19,6 +19,26 @@ use Drupal\Core\Form\FormStateInterface;
  */
 class CameraWidget extends WidgetBase {
   /**
+   * Enable default Drupal settings
+   */
+  public static function defaultSettings() {
+    return parent::defaultSettings();
+  } 
+
+  /**
+   * {@inheritdoc}
+   */
+  public function settingsForm(array $form, FormStateInterface $form_state) {
+    $element['value'] = [
+      '#type' => 'textfield',
+      '#default_value' => $this->getSetting('value'),
+      '#required' => TRUE
+    ];
+
+    return $element;
+  }
+  
+  /**
    * {@inheritdoc}
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
@@ -113,6 +133,7 @@ class CameraWidget extends WidgetBase {
         'id' => ['generate_url'],
         'style' => ['z-index:0; pointer-events:none; position:relative;'],
       ],
+      '#required' => TRUE
     ];
 
     $element['width'] = [
